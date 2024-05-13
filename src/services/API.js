@@ -1,24 +1,24 @@
 import axios from "axios";
+import {API_MAP_KEY} from '@env'
 
-
-export const getDistance = async(address, destination) => {
+export const getDistance = async (address, destination) => {
     const baseUrl = 'https://maps.googleapis.com/maps/api/distancematrix/json';
-
 
     const params = {
         origins: address,
         destinations: destination,
         mode: 'driving',
-        key: 'AIzaSyBOLO546Cv7vB_AHtIMc1p08PdKS5BN8dU'
+        key: API_MAP_KEY
     };
 
     try {
+        
         const response = await axios.get(baseUrl, { params });
         const data = response.data;
 
         if (data.status === 'OK') {
             const distance = data.rows[0].elements[0].distance.value / 1000; 
-            return [distance, data];
+            return distance;
 
         } else {
             console.log(data.status)
@@ -30,3 +30,6 @@ export const getDistance = async(address, destination) => {
     }
     
 }
+
+
+
