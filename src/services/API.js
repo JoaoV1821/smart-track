@@ -16,9 +16,15 @@ export const getDistance = async (address, destination) => {
         const response = await axios.get(baseUrl, { params });
         const data = response.data;
 
+        console.log(data.rows[0].elements[0])
+
         if (data.status === 'OK') {
-            const distance = data.rows[0].elements[0].distance.value / 1000; 
-            return distance;
+            const distance = data.rows[0].elements[0].distance.value / 1000;
+            const duration = data.rows[0].elements[0].duration.value / 60; 
+
+            console.log(duration)
+
+            return {'distancia': distance, 'tempo': duration };
 
         } else {
             console.log(data.status)
@@ -30,6 +36,3 @@ export const getDistance = async (address, destination) => {
     }
     
 }
-
-
-
