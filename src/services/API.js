@@ -19,7 +19,7 @@ export const getDistance = async (address, destination) => {
         console.log(data.rows[0].elements[0])
 
         if (data.status === 'OK') {
-            const distance = data.rows[0].elements[0].distance.value / 1000;
+            const distance = data.rows[0].elements[0].distance.value;
             const duration = data.rows[0].elements[0].duration.value / 60; 
 
             console.log(duration)
