@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
-import { MainStackNavigator } from './src/routes/mainScreens.routes';
 import { NavigationContainer } from '@react-navigation/native';
-import Entrega from './src/pages/Entrega';
-import Rastreio from './src/pages/Rastreio';
-
+import MainStack from './src/routes/mainStack.routes'
 
 const App = () => {
     return (
         <NavigationContainer>
-            <MainStackNavigator/>
+            <MainStack/>
         </NavigationContainer>
-   
     )
    
 };

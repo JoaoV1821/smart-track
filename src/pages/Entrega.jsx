@@ -52,7 +52,7 @@ const Entrega = () => {
 
     const onSharePress = () => Share.share(shareOptions);
 
-    const findPath = useCallback(async () => {
+    const findPath = useCallback( async () => {
         let enderecoAtual = originAddress;
         let remainingEnderecos = [...addresses];
         let km = 0;
@@ -68,6 +68,7 @@ const Entrega = () => {
             );
 
             distancias.sort((a, b) => a.distancia.distancia - b.distancia.distancia);
+            
             km += distancias[0].distancia.distancia;
             time += distancias[0].distancia.tempo;
 
@@ -119,7 +120,7 @@ const Entrega = () => {
                         )}
 
                     </ScrollView>
-                    
+
                     <TouchableOpacity style={styles.routeButton} onPress={findPath}>
                         <Text style={styles.routeButtonText}>Gerar rota</Text>
                     </TouchableOpacity>

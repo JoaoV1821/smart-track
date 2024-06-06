@@ -8,7 +8,7 @@ import {Ionicons} from '@expo/vector-icons'
 
 
 
-export const MainStackNavigator = () => {
+export default MainScreens = () => {
     const Tab = createBottomTabNavigator();
 
     return (
