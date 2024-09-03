@@ -4,31 +4,29 @@ import { AppButton } from '../components/AppButtons';
     
 const Login = ({navigation}) => {
   return (
-
     <SafeAreaView style={{backgroundColor: '#FFF', height: '100%', flex: 1, flexDirection: 'column', alignItems: 'center'}}>
 
-        
             <Image source={require('../../assets/logo.png')} style={{width: 400, height: 130, top: 155 }}/>
 
-       
        <View style={{top: 230, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', height: '35%', left: 15 }}>
 
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-start'}}>
-                    <Image source={require('../../assets/email.png')}/>
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-start',}}>
+                    <Image source={require('../../assets/email.png')} style={{width: 40, height: 40, top: 15 }}/>
                   <View>
                       <TextInput placeholder='Digite seu email' style={{width: 300, height: 70, fontSize: 20, paddingLeft: 40 }}/>
                       <View style={{ borderBottomWidth: 1, width: 350, borderBottomColor: '#CC5803', right: 50}}></View>
                   </View>
                 </View>
                 
- 
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-start'}}>
-                    <Image source={require('../../assets/password.png')}/>
+                    <Image source={require('../../assets/password.png')} style={{width: 40, height: 40, top: 15 }}/>
                   <View>
-                      <TextInput placeholder='Digite sua senha'  style={{width: 300, height: 70, fontSize: 20, paddingLeft: 40 }}/>
+                        <TextInput placeholder='Digite sua senha'  style={{width: 300, height: 70, fontSize: 20, paddingLeft: 40 }} secureTextEntry={true}/>
                       <View style={{ borderBottomWidth: 1, width: 350, borderBottomColor: '#CC5803', right: 50}}></View>
                   </View>
                 </View>
+
+                <Text  style={{bottom: 30, left: 55, fontSize: 15}}>Esqueceu a sua senha ?</Text>
              
                 <AppButton title={'Acessar'} onPress={() => navigation.navigate('MainScreens')}/>    
        </View>

@@ -14,7 +14,8 @@ export const AppButton = (props) => {
             marginLeft: props.marginLeft ? props.marginLeft : 1,
             marginTop: props.marginTop ?  props.marginTop : 1,
             top: props.top ? props.top: 1, 
-            left: props.left ? props.left: 1
+            left: props.left ? props.left: 1,
+            right: props.right ? props.right: 1
         }} onPress={props.onPress} >
            <Text style={style.text}>{props.title}</Text>
         </TouchableHighlight>

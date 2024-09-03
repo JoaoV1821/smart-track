@@ -8,7 +8,7 @@ const Entrega = () => {
     const [estimatedTime, setEstimatedTime] = useState('');
     const [totalDistance, setTotalDistance] = useState(0);
     const [path, setPath] = useState([]);
-    const [originAddress] = useState('Av. Cel. Francisco H. dos Santos, 354, Curitiba');
+    const [originAddress] = useState('R. Dr. Alcides Vieira Arcoverde, 1225 - Jardim das Américas, Curitiba ');
     const [showResults, setShowResults] = useState(false);
 
     const handleAddAddress = () => {
@@ -61,6 +61,7 @@ const Entrega = () => {
 
         while (remainingEnderecos.length > 0) {
             const distancias = await Promise.all(
+                
                 remainingEnderecos.map(async (endereco) => {
                     const distancia = await calcularDistancia(enderecoAtual, endereco);
                     return { endereco, distancia };

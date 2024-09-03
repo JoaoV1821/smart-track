@@ -22,7 +22,7 @@ export const getDistance = async (address, destination) => {
             const distance = data.rows[0].elements[0].distance.value;
             const duration = data.rows[0].elements[0].duration.value / 60; 
 
-            console.log(duration)
+            console.log(duration);
 
             return {'distancia': distance, 'tempo': duration };
 
